@@ -100,10 +100,10 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex flex-col sm:flex-row flex-wrap gap-4 max-w-lg"
           >
-            <Link to="/campus-map" className="w-full sm:w-auto">
+            <Link to="/location" className="w-full sm:w-auto">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-[8px] px-8 h-12 text-sm font-semibold w-full sm:w-auto">
                 <MapPin className={`w-4 h-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                {t('hero.navigateCampus')}
+                {t('nav.location')}
               </Button>
             </Link>
             <Link to="/about" className="w-full sm:w-auto">

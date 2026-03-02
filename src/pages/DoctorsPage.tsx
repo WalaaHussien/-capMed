@@ -14,18 +14,50 @@ interface Doctor {
   id: number; name_en: string; name_ar: string; specialty_en: string; specialty_ar: string;
   experience: number; rating: number; gender: 'Male' | 'Female';
   languages: string[]; acceptingNew: boolean; sameDayAvailable: boolean; insurance: string[];
-  initials: string; avatarColor: string;
+  initials: string; avatarColor: string; image: string;
 }
 
 const doctors: Doctor[] = [
-  { id: 1, name_en: 'Dr. Ahmed Hassan', name_ar: 'د. أحمد حسن', specialty_en: 'Cardiology', specialty_ar: 'أمراض القلب', experience: 15, rating: 4.9, gender: 'Male', languages: ['English', 'Arabic'], acceptingNew: true, sameDayAvailable: false, insurance: ['AXA', 'Bupa'], initials: 'AH', avatarColor: 'from-primary to-primary/70' },
-  { id: 2, name_en: 'Dr. Fatima Al-Sayed', name_ar: 'د. فاطمة السيد', specialty_en: 'Neurology', specialty_ar: 'الأعصاب', experience: 12, rating: 4.8, gender: 'Female', languages: ['English', 'Arabic', 'French'], acceptingNew: true, sameDayAvailable: true, insurance: ['AXA', 'MetLife'], initials: 'FA', avatarColor: 'from-secondary to-secondary/70' },
-  { id: 3, name_en: 'Dr. Mohamed Khalil', name_ar: 'د. محمد خليل', specialty_en: 'Orthopedics', specialty_ar: 'العظام', experience: 20, rating: 4.9, gender: 'Male', languages: ['English', 'Arabic'], acceptingNew: false, sameDayAvailable: false, insurance: ['Bupa', 'Allianz'], initials: 'MK', avatarColor: 'from-accent to-accent/70' },
-  { id: 4, name_en: 'Dr. Sara Ibrahim', name_ar: 'د. سارة إبراهيم', specialty_en: 'Pediatrics', specialty_ar: 'طب الأطفال', experience: 10, rating: 4.7, gender: 'Female', languages: ['English', 'Arabic'], acceptingNew: true, sameDayAvailable: true, insurance: ['AXA', 'Cigna'], initials: 'SI', avatarColor: 'from-primary to-secondary' },
-  { id: 5, name_en: 'Dr. Omar Mahmoud', name_ar: 'د. عمر محمود', specialty_en: 'Oncology', specialty_ar: 'الأورام', experience: 18, rating: 4.9, gender: 'Male', languages: ['English', 'Arabic', 'German'], acceptingNew: true, sameDayAvailable: false, insurance: ['Bupa', 'MetLife', 'Allianz'], initials: 'OM', avatarColor: 'from-secondary to-accent' },
-  { id: 6, name_en: 'Dr. Layla Abdel-Rahman', name_ar: 'د. ليلى عبد الرحمن', specialty_en: 'Ophthalmology', specialty_ar: 'طب العيون', experience: 14, rating: 4.8, gender: 'Female', languages: ['English', 'Arabic'], acceptingNew: true, sameDayAvailable: true, insurance: ['AXA', 'Cigna'], initials: 'LA', avatarColor: 'from-accent to-primary' },
-  { id: 7, name_en: 'Dr. Khaled Nasser', name_ar: 'د. خالد ناصر', specialty_en: 'Internal Medicine', specialty_ar: 'الباطنة', experience: 16, rating: 4.7, gender: 'Male', languages: ['English', 'Arabic'], acceptingNew: false, sameDayAvailable: false, insurance: ['Bupa'], initials: 'KN', avatarColor: 'from-primary/80 to-primary' },
-  { id: 8, name_en: 'Dr. Nour El-Din', name_ar: 'د. نور الدين', specialty_en: 'Surgery', specialty_ar: 'الجراحة', experience: 22, rating: 4.9, gender: 'Male', languages: ['English', 'Arabic', 'French'], acceptingNew: true, sameDayAvailable: false, insurance: ['AXA', 'Bupa', 'MetLife'], initials: 'NE', avatarColor: 'from-secondary/80 to-secondary' },
+  {
+    id: 1, name_en: 'Dr. Ahmed Hassan', name_ar: 'د. أحمد حسن', specialty_en: 'Cardiology', specialty_ar: 'أمراض القلب',
+    experience: 15, rating: 4.9, gender: 'Male', languages: ['English', 'Arabic'], acceptingNew: true, sameDayAvailable: false, insurance: ['AXA', 'Bupa'],
+    initials: 'AH', avatarColor: 'from-primary to-primary/70', image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
+    id: 2, name_en: 'Dr. Fatima Al-Sayed', name_ar: 'د. فاطمة السيد', specialty_en: 'Neurology', specialty_ar: 'الأعصاب',
+    experience: 12, rating: 4.8, gender: 'Female', languages: ['English', 'Arabic', 'French'], acceptingNew: true, sameDayAvailable: true, insurance: ['AXA', 'MetLife'],
+    initials: 'FA', avatarColor: 'from-secondary to-secondary/70', image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
+    id: 3, name_en: 'Dr. Mohamed Khalil', name_ar: 'د. محمد خليل', specialty_en: 'Orthopedics', specialty_ar: 'العظام',
+    experience: 20, rating: 4.9, gender: 'Male', languages: ['English', 'Arabic'], acceptingNew: false, sameDayAvailable: false, insurance: ['Bupa', 'Allianz'],
+    initials: 'MK', avatarColor: 'from-accent to-accent/70', image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
+    id: 4, name_en: 'Dr. Sara Ibrahim', name_ar: 'د. سارة إبراهيم', specialty_en: 'Pediatrics', specialty_ar: 'طب الأطفال',
+    experience: 10, rating: 4.7, gender: 'Female', languages: ['English', 'Arabic'], acceptingNew: true, sameDayAvailable: true, insurance: ['AXA', 'Cigna'],
+    initials: 'SI', avatarColor: 'from-primary to-secondary', image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
+    id: 5, name_en: 'Dr. Omar Mahmoud', name_ar: 'د. عمر محمود', specialty_en: 'Oncology', specialty_ar: 'الأورام',
+    experience: 18, rating: 4.9, gender: 'Male', languages: ['English', 'Arabic', 'German'], acceptingNew: true, sameDayAvailable: false, insurance: ['Bupa', 'MetLife', 'Allianz'],
+    initials: 'OM', avatarColor: 'from-secondary to-accent', image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
+    id: 6, name_en: 'Dr. Layla Abdel-Rahman', name_ar: 'د. ليلى عبد الرحمن', specialty_en: 'Ophthalmology', specialty_ar: 'طب العيون',
+    experience: 14, rating: 4.8, gender: 'Female', languages: ['English', 'Arabic'], acceptingNew: true, sameDayAvailable: true, insurance: ['AXA', 'Cigna'],
+    initials: 'LA', avatarColor: 'from-accent to-primary', image: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
+    id: 7, name_en: 'Dr. Khaled Nasser', name_ar: 'د. خالد ناصر', specialty_en: 'Internal Medicine', specialty_ar: 'الباطنة',
+    experience: 16, rating: 4.7, gender: 'Male', languages: ['English', 'Arabic'], acceptingNew: false, sameDayAvailable: false, insurance: ['Bupa'],
+    initials: 'KN', avatarColor: 'from-primary/80 to-primary', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
+    id: 8, name_en: 'Dr. Nour El-Din', name_ar: 'د. نور الدين', specialty_en: 'Surgery', specialty_ar: 'الجراحة',
+    experience: 22, rating: 4.9, gender: 'Male', languages: ['English', 'Arabic', 'French'], acceptingNew: true, sameDayAvailable: false, insurance: ['AXA', 'Bupa', 'MetLife'],
+    initials: 'NE', avatarColor: 'from-secondary/80 to-secondary', image: 'https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&q=80&w=300&h=300'
+  },
 ];
 
 const specialties = [
@@ -137,15 +169,18 @@ const DoctorsPage: React.FC = () => {
               <motion.div key={doctor.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.04 }}
                 whileHover={{ y: -4 }} className="premium-card overflow-hidden p-0">
                 {/* Professional Avatar */}
-                <div className="aspect-square bg-muted relative flex items-center justify-center overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${doctor.avatarColor} opacity-15`} />
-                  <div className="relative flex flex-col items-center gap-3">
-                    <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${doctor.avatarColor} flex items-center justify-center shadow-lg`}>
-                      <span className="text-3xl font-bold text-white">{doctor.initials}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 bg-background/80 backdrop-blur-sm rounded-full px-3 py-1">
+                <div className="aspect-square bg-muted relative flex items-center justify-center overflow-hidden group">
+                  <img
+                    src={doctor.image}
+                    alt={language === 'ar' ? doctor.name_ar : doctor.name_en}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80" />
+
+                  <div className="absolute bottom-4 left-0 right-0 flex justify-center z-10">
+                    <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1 shadow-sm">
                       <Stethoscope className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-xs font-medium text-foreground">{language === 'ar' ? doctor.specialty_ar : doctor.specialty_en}</span>
+                      <span className="text-xs font-medium text-[hsl(210,100%,14%)]">{language === 'ar' ? doctor.specialty_ar : doctor.specialty_en}</span>
                     </div>
                   </div>
                 </div>

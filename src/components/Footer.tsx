@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
     t('nav.about'),
     t('nav.services'),
     t('nav.doctors'),
-    t('nav.patients'),
+    t('nav.medicalTourism'),
     t('nav.research'),
     t('nav.contact'),
   ];
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                 { label: t('nav.about'), href: '/about' },
                 { label: t('nav.services'), href: '/services' },
                 { label: t('nav.doctors'), href: '/doctors' },
-                { label: t('nav.patients'), href: '/medical-tourism' },
+                { label: t('nav.medicalTourism'), href: '/medical-tourism' },
                 { label: t('nav.research'), href: '/research' },
                 { label: t('nav.contact'), href: '/contact' },
               ].map((link, index) => (

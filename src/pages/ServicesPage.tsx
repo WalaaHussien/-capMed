@@ -9,6 +9,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import heroImage2 from '@/assets/hero-hospital-interior.jpg';
 
 const stagger = {
@@ -134,9 +135,11 @@ const ServicesPage: React.FC = () => {
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-[8px]">
                 {t('services.cta.appointment')}
               </Button>
-              <Button size="lg" className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 rounded-[8px]">
-                {t('services.cta.contact')}
-              </Button>
+              <Link to="/contact">
+                <Button size="lg" className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 rounded-[8px]">
+                  {t('services.cta.contact')}
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -73,8 +73,8 @@ const LocationPage: React.FC = () => {
             </div>
           </div>
           <div className="flex justify-center gap-4 mb-16">
-            <a href="https://www.google.com/maps/search/%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D9%87+%D8%A7%D9%84%D8%B7%D9%8A%D9%87+%D9%83%D8%A7%D8%A8%D9%8A%D8%AA%D8%A7%D9%84+%D9%85%D9%8A%D8%AF,+Badr,+Cairo" target="_blank" rel="noopener noreferrer"><Button size="lg" className="rounded-[8px]"><MapPin className="w-4 h-4 mr-2" />{t('location.directions')}</Button></a>
-            <a href="https://www.google.com/maps/@30.074,31.738,1500m/data=!3m1!1e3" target="_blank" rel="noopener noreferrer"><Button size="lg" variant="outline" className="rounded-[8px]">{t('location.satellite')}</Button></a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=4Q43%2BXG9%2C+%D8%B7%D8%B1%D9%8A%D9%82%2C+Badr%2C+Cairo+Governorate+4956010" target="_blank" rel="noopener noreferrer"><Button size="lg" className="rounded-[8px]"><MapPin className="w-4 h-4 mr-2" />{t('location.directions')}</Button></a>
+            <a href="https://www.google.com/maps?q=4Q43%2BXG9%2C+%D8%B7%D8%B1%D9%8A%D9%82%2C+Badr%2C+Cairo+Governorate+4956010&t=k" target="_blank" rel="noopener noreferrer"><Button size="lg" variant="outline" className="rounded-[8px]">{t('location.satellite')}</Button></a>
           </div>
           <div className="grid md:grid-cols-2 gap-5 max-w-2xl mx-auto mb-20">
             <motion.div initial={{ opacity: 0, x: -15 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="premium-card p-6">

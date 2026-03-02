@@ -119,10 +119,6 @@ const MedicalTourismPage: React.FC = () => {
             <motion.div animate={{ y: [0, 15, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }}
               className="absolute top-1/3 left-1/3 w-1.5 h-1.5 bg-accent/30 rounded-full" />
           </div>
-          {/* Wave bottom */}
-          <div className="absolute bottom-0 left-0 right-0 z-10">
-            <svg viewBox="0 0 1440 80" fill="none" className="w-full"><path d="M0 40C360 80 720 0 1080 40C1260 60 1380 50 1440 40V80H0V40Z" fill="hsl(var(--background))" /></svg>
-          </div>
           <motion.div style={{ opacity: heroOpacity }} className="relative z-10 container mx-auto px-6 text-center pt-16">
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2 mb-6 mt-8">
@@ -138,13 +134,13 @@ const MedicalTourismPage: React.FC = () => {
               {t('tourism.hero.desc')}
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-[8px] px-8 h-12 text-sm font-semibold shadow-lg shadow-accent/30">
-                <Sparkles className="w-4 h-4 mr-2" />{t('tourism.cta.review')}
-              </Button>
-              <Button size="lg" className="bg-white text-foreground hover:bg-white/90 rounded-[8px] px-8 h-12 text-sm font-semibold border-0">
-                <Clock className="w-4 h-4 mr-2" />{t('tourism.cta.estimate')}
-              </Button>
+              className="flex flex-col sm:flex-row justify-center gap-8 mb-12">
+              <span className="flex items-center text-white/80 text-sm font-medium">
+                <Sparkles className="w-4 h-4 mr-2 text-accent" />{t('tourism.cta.review')}
+              </span>
+              <span className="flex items-center text-white/80 text-sm font-medium">
+                <Clock className="w-4 h-4 mr-2 text-accent" />{t('tourism.cta.estimate')}
+              </span>
             </motion.div>
             {/* Floating stat badges */}
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}

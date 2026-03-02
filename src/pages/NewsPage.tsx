@@ -8,11 +8,17 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+import heroHospital from '@/assets/hero-hospital.jpg';
+import adminBuilding from '@/assets/admin-building.png';
+import hospitalInterior from '@/assets/hero-hospital-interior.jpg';
+import hospitalAerial from '@/assets/hero-hospital-aerial.jpg';
+import ecosystem from '@/assets/ecosystem-2.png';
+
 const fadeUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.06 } } };
 
 const NewsPage: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t, language, isRTL } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('All');
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
@@ -28,45 +34,45 @@ const NewsPage: React.FC = () => {
   const articles = language === 'ar'
     ? [
       {
-        id: 1, title: 'كابيتال ميد تعلن عن إطلاق المرحلة الأولى', category: 'Announcements', excerpt: 'المستشفى الجامعي يستقبل أول مرضاه.', date: '٧ يناير ٢٠٢٦', author: 'الاتصالات المؤسسية',
+        id: 1, title: 'كابيتال ميد تعلن عن إطلاق المرحلة الأولى', category: 'Announcements', excerpt: 'المستشفى الجامعي يستقبل أول مرضاه.', date: '٧ يناير ٢٠٢٦', author: 'الاتصالات المؤسسية', image: heroHospital,
         fullContent: 'يسعدنا الإعلان عن أن المستشفى الجامعي في كابيتال ميد قد استقبل أول مرضاه في إنجاز تاريخي. تضم المرحلة الأولى مستشفى بسعة 500 سرير مجهزة بأحدث التقنيات الطبية، ومركز أبحاث متكامل، ومرافق تعليمية للطلاب والأطباء المقيمين. يمثل هذا الإنجاز نقطة تحول في تقديم الرعاية الصحية في مصر والمنطقة.'
       },
       {
-        id: 2, title: 'شراكة استراتيجية مع ميونخ هيلث', category: 'Partnerships', excerpt: 'اتفاقية تاريخية لإنشاء مركز تميز.', date: '٥ يناير ٢٠٢٦', author: 'د. أيمن',
+        id: 2, title: 'شراكة استراتيجية مع ميونخ هيلث', category: 'Partnerships', excerpt: 'اتفاقية تاريخية لإنشاء مركز تميز.', date: '٥ يناير ٢٠٢٦', author: 'د. أيمن', image: adminBuilding,
         fullContent: 'أبرمت كابيتال ميد اتفاقية شراكة استراتيجية مع مؤسسة ميونخ هيلث الألمانية لإنشاء مركز تميز في الجراحة الروبوتية. تشمل الاتفاقية تبادل الخبرات الطبية وبرامج تدريب مشتركة وتطوير بروتوكولات علاجية متقدمة تتوافق مع أعلى المعايير الدولية.'
       },
       {
-        id: 3, title: 'وحدة القلب المتقدمة تحسن النتائج', category: 'Clinical', excerpt: 'تحسن بنسبة ١٥٪ في أوقات التعافي.', date: '٢٨ ديسمبر ٢٠٢٥', author: 'قسم القلب',
+        id: 3, title: 'وحدة القلب المتقدمة تحسن النتائج', category: 'Clinical', excerpt: 'تحسن بنسبة ١٥٪ في أوقات التعافي.', date: '٢٨ ديسمبر ٢٠٢٥', author: 'قسم القلب', image: hospitalInterior,
         fullContent: 'حققت وحدة القلب المتقدمة في كابيتال ميد تحسناً ملحوظاً بنسبة 15% في أوقات التعافي للمرضى بفضل استخدام أحدث تقنيات القسطرة والتدخل الجراحي طفيف التوغل. يعتمد القسم على فريق من أمهر أطباء القلب مع أجهزة تشخيص متطورة لضمان أفضل النتائج للمرضى.'
       },
       {
-        id: 4, title: 'إطلاق برنامج السياحة العلاجية', category: 'Medical Tourism', excerpt: 'باقات كونسيرج جديدة لمرضى الخليج.', date: '٢٠ ديسمبر ٢٠٢٥', author: 'العلاقات الدولية',
+        id: 4, title: 'إطلاق برنامج السياحة العلاجية', category: 'Medical Tourism', excerpt: 'باقات كونسيرج جديدة لمرضى الخليج.', date: '٢٠ ديسمبر ٢٠٢٥', author: 'العلاقات الدولية', image: hospitalAerial,
         fullContent: 'أطلقت كابيتال ميد برنامج السياحة العلاجية الشامل الذي يتضمن باقات كونسيرج متكاملة مصممة خصيصاً لمرضى دول الخليج. يشمل البرنامج خدمات النقل من وإلى المطار، إقامة فندقية فاخرة، مرافقة طبية مستمرة، وتنسيق كامل للمواعيد والإجراءات الطبية.'
       },
       {
-        id: 5, title: 'نجاح حملة الفحص الصحي المجتمعي', category: 'Community', excerpt: 'أكثر من ٢٠٠٠ مقيم حصلوا على فحوصات مجانية.', date: '١٥ ديسمبر ٢٠٢٥', author: 'صحة المجتمع',
+        id: 5, title: 'نجاح حملة الفحص الصحي المجتمعي', category: 'Community', excerpt: 'أكثر من ٢٠٠٠ مقيم حصلوا على فحوصات مجانية.', date: '١٥ ديسمبر ٢٠٢٥', author: 'صحة المجتمع', image: ecosystem,
         fullContent: 'نثمن نجاح حملة الفحص الصحي المجتمعي التي أجرتها كابيتال ميد والتي استفاد منها أكثر من 2000 مقيم في المناطق المحيطة. شملت الحملة فحوصات شاملة للضغط والسكري وأمراض القلب والعيون، مع توفير استشارات طبية مجانية وتوعية صحية للمجتمع المحلي.'
       },
     ]
     : [
       {
-        id: 1, title: 'CAPITALMED Announces Phase 1 Launch', category: 'Announcements', excerpt: 'The University Hospital welcomes its first patients.', date: '07 Jan 2026', author: 'Corporate Communications',
+        id: 1, title: 'CAPITALMED Announces Phase 1 Launch', category: 'Announcements', excerpt: 'The University Hospital welcomes its first patients.', date: '07 Jan 2026', author: 'Corporate Communications', image: heroHospital,
         fullContent: 'We are thrilled to announce that the CapitalMed University Hospital has welcomed its first patients in a historic milestone. Phase 1 features a 500-bed hospital equipped with cutting-edge medical technology, an integrated research center, and educational facilities for students and resident physicians. This achievement represents a turning point in healthcare delivery across Egypt and the region.'
       },
       {
-        id: 2, title: 'Strategic Partnership with Munich Health', category: 'Partnerships', excerpt: 'A landmark agreement for robotic surgery training.', date: '05 Jan 2026', author: 'Dr. Ayman',
+        id: 2, title: 'Strategic Partnership with Munich Health', category: 'Partnerships', excerpt: 'A landmark agreement for robotic surgery training.', date: '05 Jan 2026', author: 'Dr. Ayman', image: adminBuilding,
         fullContent: 'CapitalMed has signed a strategic partnership agreement with Munich Health (Germany) to establish a Center of Excellence in Robotic Surgery. The agreement includes medical expertise exchange, joint training programs, and the development of advanced treatment protocols aligned with the highest international standards.'
       },
       {
-        id: 3, title: 'Advanced Cardiology Unit Improves Outcomes', category: 'Clinical', excerpt: '15% improvement in recovery times.', date: '28 Dec 2025', author: 'Cardiology Dept',
+        id: 3, title: 'Advanced Cardiology Unit Improves Outcomes', category: 'Clinical', excerpt: '15% improvement in recovery times.', date: '28 Dec 2025', author: 'Cardiology Dept', image: hospitalInterior,
         fullContent: 'The Advanced Cardiology Unit at CapitalMed has achieved a remarkable 15% improvement in patient recovery times thanks to the latest catheterization and minimally invasive surgical techniques. The department relies on a team of top cardiologists with state-of-the-art diagnostic equipment to ensure the best patient outcomes.'
       },
       {
-        id: 4, title: 'Medical Tourism Program for GCC', category: 'Medical Tourism', excerpt: 'New door-to-door concierge packages available.', date: '20 Dec 2025', author: 'International Relations',
+        id: 4, title: 'Medical Tourism Program for GCC', category: 'Medical Tourism', excerpt: 'New door-to-door concierge packages available.', date: '20 Dec 2025', author: 'International Relations', image: hospitalAerial,
         fullContent: 'CapitalMed has launched a comprehensive Medical Tourism Program featuring integrated concierge packages designed specifically for GCC patients. The program includes airport transfers, luxury hotel accommodation, continuous medical accompaniment, and full coordination of all appointments and medical procedures.'
       },
       {
-        id: 5, title: 'Community Health Screening Success', category: 'Community', excerpt: 'Over 2,000 residents received free screenings.', date: '15 Dec 2025', author: 'Community Health',
+        id: 5, title: 'Community Health Screening Success', category: 'Community', excerpt: 'Over 2,000 residents received free screenings.', date: '15 Dec 2025', author: 'Community Health', image: ecosystem,
         fullContent: 'We celebrate the success of the community health screening campaign conducted by CapitalMed, benefiting over 2,000 residents in the surrounding areas. The campaign included comprehensive screenings for blood pressure, diabetes, heart disease, and eye conditions, along with free medical consultations and health awareness for the local community.'
       },
     ];
@@ -98,8 +104,17 @@ const NewsPage: React.FC = () => {
             {filtered.map((article) => (
               <motion.article key={article.id} variants={fadeUp} whileHover={expandedId !== article.id ? { y: -3 } : {}}
                 layout className="premium-card overflow-hidden p-0">
-                <div className="h-40 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                  <Badge variant="outline">{categories.find(c => c.key === article.category)?.label || article.category}</Badge>
+                <div className="h-48 relative overflow-hidden group">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className={`absolute top-4 ${isRTL ? 'right-4' : 'left-4'}`}>
+                    <Badge variant="secondary" className="bg-white/90 backdrop-blur text-foreground shadow-sm">
+                      {categories.find(c => c.key === article.category)?.label || article.category}
+                    </Badge>
+                  </div>
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
